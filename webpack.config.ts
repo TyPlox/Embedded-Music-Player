@@ -1,5 +1,6 @@
 import * as fs from 'fs';
 import { join } from 'path';
+import * as webpack from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import FixStyleOnlyEntriesPlugin from 'webpack-fix-style-only-entries';
 
@@ -21,7 +22,7 @@ for(let assetFile of fs.readdirSync(stylesPath)) {
     }
 }
 
-module.exports = {
+const config: webpack.Configuration = {
     entry: entryFiles,
     module: {
         rules: [
@@ -44,6 +45,7 @@ module.exports = {
         extensions: ['.tsx', '.ts'],
     },
     plugins: [
+        // @ts-ignore
         new FixStyleOnlyEntriesPlugin(),
         new MiniCssExtractPlugin({
             filename: "styles/[name].css"
@@ -54,3 +56,5 @@ module.exports = {
         path: basePath
     }
 };
+
+export default config;

@@ -1,7 +1,4 @@
 declare module 'webpack-fix-style-only-entries' {
-    declare class WebpackFixStyleOnlyEntriesPlugin {
-        constructor(): void;
-    }
-
+    declare class WebpackFixStyleOnlyEntriesPlugin {}
     export default WebpackFixStyleOnlyEntriesPlugin;
 }

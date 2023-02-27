@@ -1,13 +1,13 @@
-const fs = require('fs');
-const path = require("path");
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const FixStyleOnlyEntriesPlugin = require("webpack-fix-style-only-entries");
+import * as fs from 'fs';
+import { join } from 'path';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import FixStyleOnlyEntriesPlugin from 'webpack-fix-style-only-entries';
 
-const basePath = path.join(__dirname, 'static');
-const scriptsPath = path.join(basePath, 'scripts');
-const stylesPath = path.join(basePath, 'styles');
+const basePath = join(__dirname, 'static');
+const scriptsPath = join(basePath, 'scripts');
+const stylesPath = join(basePath, 'styles');
 
-const entryFiles = {};
+const entryFiles: any = {};
 
 for(let assetFile of fs.readdirSync(scriptsPath)) {
     if(!assetFile.includes('.js')) {

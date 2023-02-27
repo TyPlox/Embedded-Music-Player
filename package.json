@@ -2,20 +2,23 @@
   "name": "embedded-music-player",
   "version": "1.0.0",
   "description": "The idea of this project is to create a music player that can be embedded in any website and can receive parameters via URL, such as the link to the song, the title and the subtitle.",
-  "main": "webpack.config.js",
+  "main": "webpack.config.ts",
   "scripts": {
-    "prod": "npx webpack --mode=production",
-    "dev": "npx webpack --watch --mode=development"
+    "prod": "cross-env TS_NODE_PROJECT=\"tsconfig.webpack.json\" npx webpack --mode=production",
+    "dev": "cross-env TS_NODE_PROJECT=\"tsconfig.webpack.json\" npx webpack --watch --mode=development"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/node": "^18.14.2",
     "css-loader": "^6.7.3",
     "mini-css-extract-plugin": "^2.7.2",
     "sass": "^1.58.3",
     "sass-loader": "^13.2.0",
     "ts-loader": "^9.4.2",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^3.14.2",
     "typescript": "^4.9.5",
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.1",

@@ -8,7 +8,9 @@ The idea of this project is to create a music player that can be embedded in any
 
 ## Installation
 
-After clone, generate static files with npm
+After clone, please install `cross-env` using `npm install -g cross-env`
+
+Then generate static files with npm
 
 ```bash
   npm run prod
